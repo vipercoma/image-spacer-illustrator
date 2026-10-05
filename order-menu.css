@@ -1,0 +1,15 @@
+.order-menu{position:relative;z-index:2}
+.order-menu__trigger{display:flex;align-items:center;justify-content:space-between;gap:12px;text-align:left;margin:0;min-height:38px;font-weight:normal}
+.order-menu__chevron{width:8px;height:8px;flex-shrink:0;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);margin-right:5px;margin-top:-4px;transition:transform 160ms ease}
+.order-menu__trigger[aria-expanded=true] .order-menu__chevron{transform:rotate(225deg);margin-top:4px}
+.order-menu__list{position:absolute;top:calc(100% + 6px);left:0;right:0;padding:5px;border:1px solid #484848;border-radius:14px;background:#262626;box-shadow:0 10px 28px #0006;animation:order-reveal 160ms ease-out;transform-origin:top}
+.order-menu__list[hidden]{display:none}
+.order-menu .order-menu__option{display:block;width:100%;margin:0;padding:10px 12px;text-align:left;border:0;border-radius:9px;font-weight:normal;background:transparent;color:#eee}
+.order-menu .order-menu__option:hover,.order-menu .order-menu__option:focus{background:#444;outline:none}
+.order-menu .order-menu__option[aria-selected=true]{font-weight:bold;background:#373737}
+body[data-theme=light] .order-menu__list{background:#eee;border-color:#bbb}
+body[data-theme=light] .order-menu .order-menu__option{background:transparent;color:#181818}
+body[data-theme=light] .order-menu .order-menu__option:hover,body[data-theme=light] .order-menu .order-menu__option:focus{background:#d5d5d5}
+body[data-theme=light] .order-menu .order-menu__option[aria-selected=true]{background:#ddd}
+@keyframes order-reveal{from{opacity:0;transform:translateY(-5px) scaleY(.96)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.order-menu__list{animation:none}.order-menu__chevron{transition:none}}
